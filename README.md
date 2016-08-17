@@ -4,7 +4,7 @@ Simple Kali container based on the [official Kali docker image](https://hub.dock
 
 Docker hub: https://hub.docker.com/r/c4nc/kalibase
 
-Size: ~ 3.3 GB
+Size: ~ 2 GB
 
 ### Information Gathering
 - dnstools (dig etc)
@@ -25,7 +25,7 @@ Size: ~ 3.3 GB
 - wordlists
 - SET
 
-### MISC
+### Misc
 - wireshark
 - vim
 - git

@@ -11,12 +11,12 @@ Size: ~ 2.5 GB
 ###Usage:
 
 ######Launch metasploit console *
-`docker run [-\-name YouContainerName] -ti c4nc/kalibase[:latest|vX.X]`
+`docker run [--name YouContainerName] -ti c4nc/kalibase[:latest|vX.X]`
 
 \* Metasploit will be updated before starting and the search cache will be initializated in background
 
 ######Spawning an interactive shell
-`docker run [-\-name YouContainerName] -ti c4nc/kalibase[:latest|vX.X] /bin/bash`
+`docker run [--name YouContainerName] -ti c4nc/kalibase[:latest|vX.X] /bin/bash`
 
 NB: To start metasploit with all the initializations from an interactive shell, you can use `/root/msf_init.sh`
 

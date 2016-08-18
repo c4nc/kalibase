@@ -9,10 +9,10 @@ dnsmap exploitdb masscan theharvester wireshark sqlmap mitmproxy \
 commix shellnoob set wordlists webshells weevely dnsutils sslstrip patator hydra joomscan\
 vim git cryptcat && apt-get autoremove && rm -rf /var/lib/apt/lists/* && \
 mkdir /root/msf_init
-ADD ./msf_init.sh /root/msf_init.sh
+ADD ./msf_init.sh /usr/local/bin/msf_init.sh
 #Start Posgress for init msf
 RUN /etc/init.d/postgresql start
 #Initialize msf4 DB
 RUN ["msfdb", "init"]
 # Starting script (Updates + DB + db cache)
-CMD /root/msf_init.sh
+CMD msf_init.sh

@@ -1,24 +1,25 @@
-# Kalibase Linux Container
+# Kalibase Docker
 
-Simple Kali container based on the [official Kali docker image](https://hub.docker.com/r/kalilinux/kali-linux-docker) plus a basic collection of tools.
+>Infosec  container based on the [official Kali docker image](https://hub.docker.com/r/kalilinux/kali-linux-docker).
+Use it as a full shell kali's environment (for a complete list of installed tools check the "Tools" section below) or
+launch it as a Metasploit container: in this way it manage all te necessesary init phases (db + search cache).
 
-It provides the default configuration for metasploit-framework, cache search is automatically started in background at runtime
+> Docker hub: https://hub.docker.com/r/c4nc/kalibase
 
-Docker hub: https://hub.docker.com/r/c4nc/kalibase
+>Size: ~ 2.3 GB
 
-Size: ~ 2.5 GB
+### Usage:
 
-###Usage:
+###### Kali interactive shell mode
+`:~# docker run [--name YouContainerName] -it c4nc/kalibase[:latest|vX.X]`
+\*Hint: you can even launch metasploit within the shell with all the initialization using `:~# msfstart [-u]`
 
-######Launch metasploit console *
-`:~# docker run [--name YouContainerName] -ti  c4nc/kalibase[:latest|vX.X]`
 
-\* Metasploit will be updated before starting and the search cache will be initializated in background
+###### Metasploit console mode
+`:~# docker run [--name YouContainerName] -it  c4nc/kalibase[:latest|x.x.x] msfstart [-u]`
 
-######Spawning an interactive shell
-`:~# docker run [--name YouContainerName] -ti c4nc/kalibase[:latest|vX.X] /bin/bash`
+ msfstart -u | update msf and rebuild the search cache before launch the console
 
-NB: To start metasploit with all the initializations from an interactive shell, you can use `:~# msf_init.sh`
 
 ### Tools:
 

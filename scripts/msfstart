@@ -1,0 +1,43 @@
+#!/bin/bash
+
+function startPostgresql()
+{
+  service postgresql status > /dev/null
+
+  case "$?" in
+      0) echo "Postgress is up and running"
+          ;;
+
+      3) service postgresql start > /dev/null
+          if [ "$?" -ne 0 ]; then
+            echo "Error starting postgresql"
+          else
+            echo "Postgresql started"
+          fi
+          ;;
+
+      *) echo "Postrgress status unknown, trying restarting.."
+         service postgresql restart
+            if [ "$?" -ne 0 ]; then
+              echo "Cannot restart postgresql, exiting"
+              exit 1
+            else
+                echo "Postgresql successfully restarted"
+            fi
+          ;;
+  esac
+}
+
+#Begin Script
+if [ "$#" = 0 ]; then
+  startPostgresql
+  exec msfconsole
+elif [ "$1" != '-u' ]; then
+  printf "Usage: $0 [-h][-u]\n-u Update msf\n-h This help screen\n\n"
+else
+  startPostgresql
+  msfupdate #Update MSF
+  msfconsole -q -x "db_rebuild_cache;  exit" #Rebuild db search cache in background
+  echo 'Rebuilding in progess, that may take some time...'
+  exec msfconsole
+fi

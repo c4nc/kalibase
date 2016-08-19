@@ -2,7 +2,7 @@
 
 >Infosec  container based on the [official Kali docker image](https://hub.docker.com/r/kalilinux/kali-linux-docker).
 Use it as a full shell kali's environment (for a complete list of installed tools check the "Tools" section below) or
-launch it as a Metasploit container: in this way it manage all te necessesary init phases (db + search cache).
+launch it as a Metasploit container: in this way it manage all the necessesary init phases (db + search cache).
 
 > Docker hub: https://hub.docker.com/r/c4nc/kalibase
 
@@ -10,15 +10,18 @@ launch it as a Metasploit container: in this way it manage all te necessesary in
 
 ### Usage:
 
-###### Kali interactive shell mode
+##### Kali interactive shell mode
 `:~# docker run [--name YouContainerName] -it c4nc/kalibase[:latest|vX.X]`
+
 \*Hint: you can even launch metasploit within the shell with all the initialization using `:~# msfstart [-u]`
 
+##### Metasploit console mode
+`:~# docker run [--name YouContainerName] -it  c4nc/kalibase[:latest|vx.x.x] msfstart [-u]`
 
-###### Metasploit console mode
-`:~# docker run [--name YouContainerName] -it  c4nc/kalibase[:latest|x.x.x] msfstart [-u]`
+msfstart -u | update msf and rebuild the search cache before launch the console
 
- msfstart -u | update msf and rebuild the search cache before launch the console
+##### Launch tool directly
+`:~# docker run [--name YouContainerName] -it  c4nc/kalibase[:latest|vx.x.x] COMMAND [params]`
 
 
 ### Tools:

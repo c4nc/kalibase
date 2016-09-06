@@ -1,12 +1,12 @@
 # Kalibase Docker
 
 >Infosec  container based on the [official Kali docker image](https://hub.docker.com/r/kalilinux/kali-linux-docker).
-Use it as a full shell kali's environment (for a complete list of installed tools check the "Tools" section below) or
-launch it as a Metasploit container: in this way it manage all the necessesary init phases (db + search cache).
+Use it as a full shell kali's environment (for a complete list of installed tools check the [section below](https://github.com/c4nc/kalibase#tools)) or
+launch it as a Metasploit container, it will manage all the necessesary init phases (db + search cache).
 
 > Docker hub: https://hub.docker.com/r/c4nc/kalibase
 
->Size: ~ 2.3 GB
+>Size: ~ 2.6 GB
 
 ### Usage:
 

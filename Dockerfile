@@ -4,7 +4,7 @@
 FROM kalilinux/kali-linux-docker:latest
 MAINTAINER Luca Cancelliere "luca.canc@gmail.com"
 SHELL ["/bin/bash", "-c"]
-RUN apt-get -y update  && apt-get -y upgrade  && \
+RUN apt-get -y update && \
 apt-get -y install metasploit-framework nmap dnsenum bettercap \
 dnsmap exploitdb masscan theharvester wireshark sqlmap mitmproxy \
 commix shellnoob set wordlists webshells weevely dnsutils sslstrip \

@@ -1,5 +1,5 @@
 # Name: kalibase
-# Version: 0.1.3
+# Version: 0.1.4
 # Desc: Kali image plus basic infosec tools
 FROM kalilinux/kali-linux-docker:latest
 MAINTAINER Luca Cancelliere "luca.canc@gmail.com"
